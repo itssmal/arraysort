@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>Sorting Arrays</h1>
+        <h2>Array before sorting: </h2>
+        <h2 id="arrToSort">[3, 7, 0, 4, 9, 1]</h2>
+        <!-- <h3>Or create your own array</h3>
+        <input type="text" placeholder="type your own array" id="newArr"></input>
+        <input type="button" value="GO!" onclick="newArray()"></input> -->
+        <h2>Select sorting method:
+            <select name="method">
+                <option value="Bubble Sorting">Bubble Sort</option>
+                <option value="Insertion Sorting">Insertion Sort</option>
+                <option value="Selection Sorting">Selection Sort</option>
+            </select>
+        </h2>
+        <button class="btn" onclick="displayArr()" id="sortBtn"><span>Sort Array!</span></button>
+        <h2>Array after sorting:</h2>
+        <h2 id="sortedArr"></h2>
+    </div>
+    <div>
+        <button type="button" id="collapsible" onclick="viewCode()"><span>View Code</span></button>
+        <pre class="active">
+            <h3>Бульбашкове сортування:</h2>
+            <code>
+function bubbleSort(arr) {
+    for(let j = 0; j < arr.length; j++ ){
+        for(let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i+1]) {
+                let temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp; 
+            }
+        } 
+    }
+    return arr;
+}
+            </code> 
+            <h3>Сортування вставкою:</h2>
+                <code>
+function insertSort (arr){
+    for (let i = 1; i < arr.length; i++) {
+        const current = arr[i];
+        let j = i;
+        while (j > 0 && arr[j - 1] > current) {
+            arr[j] = arr[j - 1];
+            j--;
+        }
+        arr[j] = current;
+        }
+    return arr;
+}
+                </code> 
+                <h3>Cортування вибором:</h2>
+                    <code>
+function insertSort (arr){
+    for (let i = 1; i < arr.length; i++) {
+        const current = arr[i];
+        let j = i;
+        while (j > 0 && arr[j - 1] > current) {
+            arr[j] = arr[j - 1];
+            j--;
+        }
+        arr[j] = current;
+        }
+    return arr;
+}
+                    </code> 
+        </pre>
+                   
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
