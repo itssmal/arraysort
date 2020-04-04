@@ -14,13 +14,12 @@
         <!-- <h3>Or create your own array</h3>
         <input type="text" placeholder="type your own array" id="newArr"></input>
         <input type="button" value="GO!" onclick="newArray()"></input> -->
-        <h2>Select sorting method:
-            <select name="method">
+        <h2>Select sorting method:</h2>
+            <select name="method" size="3" onclick="checkSel()">
                 <option value="Bubble Sorting">Bubble Sort</option>
                 <option value="Insertion Sorting">Insertion Sort</option>
                 <option value="Selection Sorting">Selection Sort</option>
             </select>
-        </h2>
         <button class="btn" onclick="displayArr()" id="sortBtn"><span>Sort Array!</span></button>
         <h2>Array after sorting:</h2>
         <h2 id="sortedArr"></h2>

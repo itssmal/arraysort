@@ -11,8 +11,25 @@ input {
 select {
     color: #fff;
     background-color: #222;
-    height: 37px;
+    border: 0px;
+    outline: 0px;
+    height: 45px;
     width: 200px;
+    margin-bottom: 20px ;
+}
+select option {
+  background: #f00; 
+  color: #fff; 
+  box-shadow: inset 20px 20px #222
+} 
+
+select option:hover {
+  color: #fff; 
+  box-shadow: inset 20px 20px rgb(139, 139, 139);
+}
+select option:checked {
+  color: #fff; 
+  box-shadow: inset 20px 20px rgb(139, 139, 139);
 }
 button {
   border: none;

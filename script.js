@@ -3,9 +3,11 @@ const sorted = document.querySelector("#sortedArr");
 const array = [3, 7, 0, 4, 9, 1];
 const pre = document.getElementsByTagName("pre")[0];
 pre.style.display = "none";
-// // let newArr = Array();
-// console.log(array);
+let sel;
 
+function checkSel() {
+    sel = document.getElementsByTagName("select")[0].selectedIndex;
+}
 
 function bubbleSort(arr) {
     for(let j = 0; j < arr.length; j++ ){
@@ -33,16 +35,6 @@ function insertSort (arr){
     return arr;
 }
 
-// function selectionSort(arr){
-//     for (let i = 0; i < arr.length; i++) {
-//         let min = Math.min.apply(null, arr)
-//         arr[i] = min;
-//     }
-//     console.log(arr);
-//     return arr;
-// }
-// [3, 7, 0, 4, 9, 1];
-
 function selectionSort(arr) {
     for (let i = 0; i < arr.length; i++){
         let min = i;
@@ -61,8 +53,24 @@ function selectionSort(arr) {
 }
 
 function displayArr() {
-    insertSort(array);
-    sorted.textContent = "[" + array + "]";
+    switch (sel){
+        case 0:
+            bubbleSort(array);
+            sorted.textContent = "[" + array + "]";
+            break;
+        case 1:
+            insertSort(array);
+            sorted.textContent = "[" + array + "]";
+            break;
+        case 2:
+            selectionSort(array);
+            sorted.textContent = "[" + array + "]";
+            break;
+        default:
+            bubbleSort(array);
+            sorted.textContent = "[" + array + "]";
+            break;   
+    }
 }
 
 function viewCode(){
@@ -72,12 +80,3 @@ function viewCode(){
         pre.style.display = "none"
     }
 }
-
-// function newArray(){
-//     let x = 0;
-//     newArr[x] = document.getElementById("#newArr").value;
-//     x++;
-//     console.log(newArr);
-// }
-
-// button.addEventListener("click",displayArr);
